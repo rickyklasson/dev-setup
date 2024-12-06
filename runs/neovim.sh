@@ -26,11 +26,10 @@ echo "Downloading and installing neovim $version"
 cd /tmp || exit
 curl -LO "https://github.com/neovim/neovim/releases/download/${version}/nvim-linux64.tar.gz"
 tar -xzf nvim-linux64.tar.gz
-sudo mv nvim-linux64/bin/nvim /usr/local/bin/nvim
+sudo mv nvim-linux64 /opt/nvim-linux64
 
 # Clean up temporary files.
 rm nvim-linux64.tar.gz
-sudo rm -rf nvim-linux64
 
 # Verify installation.
 if command -v nvim >/dev/null 2>&1; then

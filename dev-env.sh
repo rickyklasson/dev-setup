@@ -57,6 +57,6 @@ update_files $DEV_ENV_HOME/env/.config $XDG_CONFIG_HOME
 
 #copy $DEV_ENV_HOME/tmux-sessionizer/tmux-sessionizer $HOME/.local/bin/tmux-sessionizer
 #copy $DEV_ENV_HOME/env/.zsh_profile $HOME/.zsh_profile
-#copy $DEV_ENV_HOME/env/.zshrc $HOME/.zshrc
+copy $DEV_ENV_HOME/env/.zshrc $HOME/.zshrc
 #copy $DEV_ENV_HOME/env/.tmux-sessionizer $HOME/.tmux-sessionizer
 

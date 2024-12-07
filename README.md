@@ -1,10 +1,6 @@
 # Prerequisites for installation.
 * Git must be installed.
 * SSH keys for github must exist.
-* Add the following to the initial .bashrc
-
-export PATH="$PATH:/opt/nvim-linux64/bin"
-
 
 ## Neovim
 Package manager:

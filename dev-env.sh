@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 dry_run="0"
 
-if [ -z "$DEV_ENV_HOME" ]; then
-    echo "env var $DEV_ENV_HOME needs to be present"
-    exit 1
-fi
+export DEV_ENV_HOME="${HOME}/dev-setup"
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 if [[ $1 == "--dry" ]]; then
     dry_run="1"

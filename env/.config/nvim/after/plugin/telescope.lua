@@ -3,11 +3,21 @@ vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'Telescope find p
 vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = 'Telescope find git files' })
 -- TODO: This grep search does not seem to work.
 vim.keymap.set('n', '<leader>ps', function() 
-    builtin.live_grep({
-        additional_args = function()
-            return { "--hidden", "--glob", "!.git/*" }
-        end,
-    });
+    builtin.live_grep();
 end)
 
-require("telescope").setup()
+require("telescope").setup({
+    defaults = {
+        vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',       -- Include hidden files
+            '--glob=!.git/*', -- Exclude the .git directory
+        },
+    },
+})

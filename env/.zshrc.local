@@ -10,7 +10,7 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
 
-export LS_COLORS="di=34:$(printenv LS_COLORS)"
+export LS_COLORS="di=34"
 
 # Alias all ls usage to exa.
 # List files and directories with details
@@ -28,6 +28,6 @@ alias latree='exa --long --all --tree --ignore-glob ".git"'
 # List files with detailed information and sorted by modification time
 alias lst='exa --long --sort=time'
 
-
 # Aliases for common operations.
-alias git='g'
+alias g='git'
+

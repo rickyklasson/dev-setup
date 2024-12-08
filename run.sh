@@ -29,7 +29,7 @@ log "RUN: env: $env -- grep: $grep"
 runs_dir=$(find $script_dir/runs -mindepth 1 -maxdepth 1 -executable)
 for s in $runs_dir; do
     if echo "$s" | grep -vq "$grep"; then
-        log "grep \"$grep\" filtered out $s"
+        log "**** grep \"$grep\" filtered out $s ****"
         continue
     fi
 
@@ -44,11 +44,11 @@ done
 runs_zsh_dir=$(find $script_dir/runs_zsh -mindepth 1 -maxdepth 1 -executable)
 for s in $runs_zsh_dir; do
     if echo "$s" | grep -vq "$grep"; then
-        log "grep \"$grep\" filtered out $s"
+        log "**** grep \"$grep\" filtered out $s ****"
         continue
     fi
 
-    log "Running script: $s"
+    log "**** Running script: $s ****"
 
     if [[ $dry_run == "0" ]]; then
         $s

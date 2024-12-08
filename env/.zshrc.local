@@ -10,6 +10,8 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
 
+export LS_COLORS="di=34:$(printenv LS_COLORS)"
+
 # Alias all ls usage to exa.
 # List files and directories with details
 alias ls='exa --long'

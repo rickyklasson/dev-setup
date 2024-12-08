@@ -33,7 +33,7 @@ for s in $runs_dir; do
         continue
     fi
 
-    log "Running script: $s"
+    log "**** Running script: $s ****"
 
     if [[ $dry_run == "0" ]]; then
         $s

@@ -9,3 +9,23 @@ bindkey -v
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
+
+# Alias all ls usage to exa.
+# List files and directories with details
+alias ls='exa --long'
+
+# List files and directories in a tree-like format
+alias ltree='exa --long --tree'
+
+# List files and directories with detailed information, including hidden files
+alias la='exa --long --all'
+
+# List files and directories with detailed information, including hidden files
+alias latree='exa --long --all --tree --ignore-glob ".git"'
+
+# List files with detailed information and sorted by modification time
+alias lst='exa --long --sort=time'
+
+
+# Aliases for common operations.
+alias git='g'

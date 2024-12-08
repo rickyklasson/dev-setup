@@ -6,4 +6,7 @@
 Package manager:
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-
+## Oh-my-zsh
+After installation, set the theme with:
+    omz theme set robbyrussell
+    omz reload

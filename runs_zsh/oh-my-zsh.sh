@@ -13,3 +13,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Appending sourcing of .zshrc.local to .zshrc file"
 echo "source ${HOME}/.zshrc.local" >> "${HOME}/.zshrc"
 
+# Clean up potential old uninstall .zshrc files.
+rm -rf ${HOME}/.zshrc.omz-uninstalled*
+rm ${HOME}/.zshrc.bck
+

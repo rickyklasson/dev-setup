@@ -32,3 +32,14 @@ alias lst='exa --long --sort=time'
 alias g='git'
 alias vi='nvim'
 alias vim='nvim'
+
+# Fuzzy zsh history search.
+fzf-history-widget() {
+    local selected=$(fc -rl 1 | fzf --height 40% --reverse --tac)
+    if [[ -n $selected ]]; then
+        LBUFFER=${selected#* }
+    fi
+    zle redisplay
+}
+zle -N fzf-history-widget
+bindkey '^F' fzf-history-widget

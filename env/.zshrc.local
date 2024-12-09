@@ -30,4 +30,5 @@ alias lst='exa --long --sort=time'
 
 # Aliases for common operations.
 alias g='git'
-
+alias vi='nvim'
+alias vim='nvim'

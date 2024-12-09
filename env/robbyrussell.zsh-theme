@@ -28,8 +28,8 @@ git_status() {
 }
 
 # Build the left-side prompt (current folder, git status, separator)
-PROMPT='${BLUE}%~${RESET} ${GREEN}$(git_status)${RESET} $ '
+PROMPT='${BLUE}%2~${RESET} ${GREEN}$(git_status)${RESET} $ '
 
 # Build the right-side prompt (Python venv and time of day)
-RPROMPT='${CYAN}$(if [[ -n $VIRTUAL_ENV ]]; then echo "(${${VIRTUAL_ENV:t}})"; fi)${RESET} %*'
+RPROMPT='${CYAN}$(if [[ -n $VIRTUAL_ENV ]]; then echo "(${${VIRTUAL_ENV:t}})"; fi)${RESET}'
 

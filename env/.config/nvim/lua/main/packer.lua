@@ -15,10 +15,10 @@ return require('packer').startup(function(use)
 
 
 	use({
-		'tiagovla/tokyodark.nvim',
-		as = 'tokyodark',
+		'gbprod/nord.nvim',
+		as = 'nord',
 		config = function()
-			vim.cmd('colorscheme tokyodark')
+			vim.cmd('colorscheme nord')
 		end
 	})
 

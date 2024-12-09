@@ -1,5 +1,5 @@
 function DoColors(color)
-	color = color or "tokyodark"
+	color = color or "nord"
 	vim.cmd.colorscheme(color)
 end
 

@@ -14,6 +14,9 @@ end, { desc = "Live grep for yanked text" })
 
 require("telescope").setup({
     defaults = {
+        file_ignore_patterns = {
+            ".git",
+        },
         vimgrep_arguments = {
             'rg',
             '--color=never',
@@ -26,4 +29,9 @@ require("telescope").setup({
             '--glob=!.git/*', -- Exclude the .git directory
         },
     },
+    pickers = {
+        find_files = {
+            hidden = true,
+        }
+    }
 })

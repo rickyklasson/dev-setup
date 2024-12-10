@@ -16,7 +16,14 @@ require("telescope").setup({
     defaults = {
         layout_strategy = 'vertical',
         file_ignore_patterns = {
+            ".ccsproject",
+            ".cproject",
             ".git",
+            ".gitattributes",
+            ".gitignore",
+            ".project",
+            ".settings",
+            ".vscode",
         },
         vimgrep_arguments = {
             'rg',

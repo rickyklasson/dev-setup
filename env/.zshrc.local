@@ -59,3 +59,6 @@ git config --global alias.l "log --oneline --graph --all --decorate --color"
 git config --global diff.tool nvim
 git config --global difftool.nvim.cmd "nvim -d \$LOCAL \$REMOTE"
 
+# Initialize Starship!
+eval "$(starship init zsh)"
+

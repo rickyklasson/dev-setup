@@ -9,8 +9,7 @@ Package manager:
 When starting nvim for the first time, install packages by
     :PackerSync
 
-## Oh-my-zsh
-After installation, set the theme with:
-    omz theme set robbyrussell
-    omz reload
+## Starship
+Starship is installed via scripts but requires nerdfont to render correctly. Download and install nerdfont via e.g.:
+    https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CascadiaMono.zip
 

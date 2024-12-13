@@ -51,12 +51,8 @@ copy() {
 }
 
 update_files $DEV_ENV_HOME/env/.config $XDG_CONFIG_HOME
-#update_files $DEV_ENV_HOME/env/.local $HOME/.local
 
-#copy $DEV_ENV_HOME/tmux-sessionizer/tmux-sessionizer $HOME/.local/bin/tmux-sessionizer
-#copy $DEV_ENV_HOME/env/.zsh_profile $HOME/.zsh_profile
-copy $DEV_ENV_HOME/env/.zshrc.local $HOME/.zshrc.local
-copy $DEV_ENV_HOME/env/robbyrussell.zsh-theme $HOME/.oh-my-zsh/custom/themes/robbyrussell.zsh-theme
+copy $DEV_ENV_HOME/env/.zshrc.local $HOME/.zshrc
+copy $DEV_ENV_HOME/env/.config/starship.toml $HOME/.config/
 copy $DEV_ENV_HOME/env/.tmux.conf $HOME/.tmux.conf
-#copy $DEV_ENV_HOME/env/.tmux-sessionizer $HOME/.tmux-sessionizer
 

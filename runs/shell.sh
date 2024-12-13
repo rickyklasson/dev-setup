@@ -15,3 +15,6 @@ fi
 
 # Use zsh as default shell.
 chsh -s $(which zsh)
+
+# Install Starship as zsh theme.
+curl -sS https://starship.rs/install.sh | sh

@@ -1,11 +1,15 @@
+add_newline = false
 format = """
 $username\
 $hostname\
 $directory\
 $git_branch\
 $git_status\
+$git_state\
 $character\
 """
+
+right_format = "$python"
 
 [character]
 format = ' $symbol '
@@ -14,10 +18,19 @@ format = ' $symbol '
 style = 'blue'
 
 [git_branch]
-style = 'green'
+format = '[$symbol$branch(:$remote_branch)]($style)'
+style = 'cyan'
 
 [git_status]
-format = '$untracked$staged$modified'
+format = '[ $untracked$staged$conflicted$modified]($style)'
+conflicted = '[|$count](red)'
 modified = '[!$count](yellow)'
 staged = '[+$count](green)'
 untracked = '[?$count](purple)'
+
+[git_state]
+format = '[\($state( $progress_current/$progress_total)\)]($style)'
+
+[python]
+style = 'yellow'
+format = '[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'

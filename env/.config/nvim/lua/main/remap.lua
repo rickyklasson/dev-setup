@@ -7,7 +7,6 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]]) -- Yank to system clipboard.
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
-
 -- Avoid automatic comment insertion when pressing o/O in NORMAL mode, and enter in INSERT mode.
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "*",

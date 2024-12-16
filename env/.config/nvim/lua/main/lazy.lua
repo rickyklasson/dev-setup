@@ -23,6 +23,12 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
     {
+        "vhyrro/luarocks.nvim",
+        priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
+        config = true,
+    },
+
+    {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
         requires = { 'nvim-lua/plenary.nvim' }
@@ -42,7 +48,7 @@ require('lazy').setup({
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
 
-    {'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}},
+    {'nvim-treesitter/nvim-treesitter'},
     {'theprimeagen/harpoon'},
     {'mbbill/undotree'},
     {'tpope/vim-fugitive'},

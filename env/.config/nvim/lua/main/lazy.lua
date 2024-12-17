@@ -35,10 +35,11 @@ require('lazy').setup({
     },
 
     {
-        'rose-pine/neovim',
-        name = 'rose-pine',
+        'catppuccin/nvim',
+        name = 'catppuccin',
         config = function()
-            vim.cmd.colorscheme 'rose-pine'
+            -- Lua
+            vim.cmd.colorscheme 'catppuccin-frappe'
         end
     },
 

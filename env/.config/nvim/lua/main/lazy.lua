@@ -34,12 +34,11 @@ require('lazy').setup({
         requires = { 'nvim-lua/plenary.nvim' }
     },
 
-
     {
-        'gbprod/nord.nvim',
-        as = 'nord',
+        'rose-pine/neovim',
+        name = 'rose-pine',
         config = function()
-            vim.cmd('colorscheme nord')
+            vim.cmd.colorscheme 'rose-pine'
         end
     },
 

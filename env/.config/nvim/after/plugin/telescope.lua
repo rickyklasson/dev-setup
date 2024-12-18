@@ -15,7 +15,8 @@ end
 
 vim.keymap.set('n', '<leader>sp', builtin.find_files, { desc = 'Telescope find project files' })
 vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = 'Telescope find git files' })
-vim.keymap.set('n', '<leader>sl', builtin.live_grep, { desc = "Live grep with empty search field" })
+vim.keymap.set('n', '<leader>sl', builtin.live_grep, { desc = 'Live grep with empty search field' })
+vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Resume previous search' })
 vim.keymap.set('n', '<leader>sy', function()
     local yanked_text = sanitized_yank()
     if yanked_text ~= "" then
@@ -23,9 +24,9 @@ vim.keymap.set('n', '<leader>sy', function()
     else
         builtin.live_grep()
     end
-end, { desc = "Live grep for yanked text" })
+end, { desc = 'Live grep for yanked text' })
 
-require("telescope").setup({
+require('telescope').setup({
     defaults = {
         layout_strategy = 'vertical',
         file_ignore_patterns = {

@@ -41,3 +41,8 @@ vim.opt.timeoutlen = 800
 
 vim.opt.colorcolumn = "120"
 
+vim.filetype.add({
+    extension = {
+        tcss = "css", -- Accociate .tcss files with CSS filetype
+    },
+})

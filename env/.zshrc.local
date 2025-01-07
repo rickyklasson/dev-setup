@@ -44,6 +44,8 @@ function tm() {
         tmux detach-client
     elif [[ $1 == 'k' ]]; then
         tmux kill-session -t $2
+    elif [[ $1 == 's' ]]; then
+        tmux switch-client -t $2
     else
         echo "Unknown argument to function tm(): ${1}"
     fi

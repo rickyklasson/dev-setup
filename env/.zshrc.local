@@ -12,7 +12,7 @@ export DEV_ENV_HOME="$HOME/dev-setup"
 export LS_COLORS="di=34"
 export COLORTERM="truecolor"
 
-# Alias all ls usage to exa.
+# -- Alias all ls usage to exa.
 # List files and directories with details
 alias ls='exa --long'
 
@@ -28,12 +28,29 @@ alias latree='exa --long --all --tree --ignore-glob ".git"'
 # List files with detailed information and sorted by modification time
 alias lst='exa --long --sort=time'
 
-# Aliases for common operations.
+# -- Neovim aliases.
 alias vi='nvim'
 alias vim='nvim'
 
+# -- Tmux alias function.
+function tm() {
+    if [[ $1 == 'n' ]]; then
+        tmux new-session -s $2
+    elif [[ $1 == 'ls' ]]; then
+        tmux list-sessions
+    elif [[ $1 == 'a' ]]; then
+        tmux attach-session -t $2
+    elif [[ $1 == 'd' ]]; then
+        tmux detach-client
+    elif [[ $1 == 'k' ]]; then
+        tmux kill-session -t $2
+    else
+        echo "Unknown argument to function tm(): ${1}"
+    fi
+}
+
 # Fuzzy zsh history search.
-fzf-history-widget() {
+function fzf-history-widget() {
     local selected_command
     selected_command=$(fc -rl 1 | fzf --height 40% --reverse --tac +m --query="$LBUFFER" \
                      --prompt="Search history > " | sed 's/^[[:space:]]*[0-9]\+[[:space:]]*//')

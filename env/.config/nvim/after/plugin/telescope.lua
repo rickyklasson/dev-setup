@@ -1,7 +1,7 @@
 local builtin = require('telescope.builtin')
 
 -- Function to clean and sanitize the yanked string
-local function sanitized_yank()
+local function get_clean_yanked_reg()
   local yank = vim.fn.getreg('"0') -- Get the content of the yank register
   if yank == nil or yank == "" then
     vim.notify("Yank register is empty!", vim.log.levels.ERROR)
@@ -13,18 +13,23 @@ local function sanitized_yank()
   return yank
 end
 
+local function live_grep_in_word()
+    vim.cmd("normal! yiw")
+    local yanked_text = get_clean_yanked_reg()
+    builtin.live_grep({ default_text = yanked_text })
+end
+
+local function live_grep_yanked()
+    local yanked_text = get_clean_yanked_reg()
+    builtin.live_grep({ default_text = yanked_text })
+end
+
 vim.keymap.set('n', '<leader>sp', builtin.find_files, { desc = 'Telescope find project files' })
 vim.keymap.set('n', '<leader>sg', builtin.git_files, { desc = 'Telescope find git files' })
 vim.keymap.set('n', '<leader>sl', builtin.live_grep, { desc = 'Live grep with empty search field' })
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Resume previous search' })
-vim.keymap.set('n', '<leader>sy', function()
-    local yanked_text = sanitized_yank()
-    if yanked_text ~= "" then
-        builtin.live_grep({ default_text = yanked_text })
-    else
-        builtin.live_grep()
-    end
-end, { desc = 'Live grep for yanked text' })
+vim.keymap.set('n', '<leader>sw', live_grep_in_word, { desc = 'Live grep for current word (yiw)' })
+vim.keymap.set('n', '<leader>sy', live_grep_yanked, { desc = 'Live grep for yanked text' })
 
 require('telescope').setup({
     defaults = {

@@ -35,19 +35,20 @@ require('lazy').setup({
     },
 
     {
-        'catppuccin/nvim',
-        name = 'catppuccin',
-        config = function()
-            -- Lua
-            vim.cmd.colorscheme 'catppuccin-frappe'
-        end
-    },
-
-    {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
 
+    {
+        'fenetikm/falcon',
+        config = function ()
+            vim.cmd.colorscheme 'falcon'
+            -- Override linenr colors for clarity.
+            vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#aaaaaa', bold=true })
+            vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='#dddddd', bold=true })
+            vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#aaaaaa', bold=true })
+        end
+    },
     {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',

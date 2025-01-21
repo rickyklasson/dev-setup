@@ -47,6 +47,7 @@ require('lazy').setup({
             vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#aaaaaa', bold=true })
             vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='#dddddd', bold=true })
             vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#aaaaaa', bold=true })
+            vim.api.nvim_set_hl(0, 'cursorline', { bg='#1c1c1c', fg="NONE", bold=true })
 
             -- Override diff colors for clarity.
             vim.api.nvim_set_hl(0, 'DiffAdd', { bg='#005f00', fg="NONE", bold=true })

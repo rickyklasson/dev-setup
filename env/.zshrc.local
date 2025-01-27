@@ -51,6 +51,9 @@ function tm() {
     fi
 }
 
+# -- Grep alias for recursive search with file and line nr.
+alias grr='grep -HIrn --exclude-dir=".git"'
+
 # Fuzzy zsh history search.
 function fzf-history-widget() {
     local selected_command
@@ -78,6 +81,6 @@ git config --global alias.l "log --oneline --graph --all --decorate --color"
 git config --global diff.tool nvim
 git config --global difftool.nvim.cmd "nvim -d \$LOCAL \$REMOTE"
 
-# Initialize Starship!
+# Initialize Starship at bottom!
 eval "$(starship init zsh)"
 

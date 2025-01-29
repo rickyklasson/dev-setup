@@ -1,6 +1,10 @@
+# zsh history file configuration
+setopt SHARE_HISTORY # Read/write new commands from history file directly.
+setopt HIST_IGNORE_ALL_DUPS # Remove older duplicates when adding a new command to the list.
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=1000
+HISTSIZE=100000
+SAVEHIST=100000
+
 setopt autocd
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -58,7 +62,7 @@ alias grr='grep -HIrn --exclude-dir=".git"'
 function fzf-history-widget() {
     local selected_command
     selected_command=$(fc -rl 1 | fzf --height 40% --reverse --tac +m --query="$LBUFFER" \
-                     --prompt="Search history > " | sed 's/^[[:space:]]*[0-9]\+[[:space:]]*//')
+                     --prompt="Search history > " | sed 's/^[[:space:]]*[0-9]\+\**[[:space:]]*//')
     if [[ -n $selected_command ]]; then
         LBUFFER+=$selected_command
     fi

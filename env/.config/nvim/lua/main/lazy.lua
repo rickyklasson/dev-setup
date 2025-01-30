@@ -52,8 +52,8 @@ require('lazy').setup({
             -- Override diff colors for clarity.
             vim.api.nvim_set_hl(0, 'DiffAdd', { bg='#005f00', fg="NONE", bold=true })
             vim.api.nvim_set_hl(0, 'DiffDelete', { bg='#5f0000', fg="NONE", bold=true })
-            vim.api.nvim_set_hl(0, 'DiffChange', { bg='#303030', fg="NONE", bold=true })
-            vim.api.nvim_set_hl(0, 'DiffText', { bg='#121212', fg="NONE", bold=true })
+            vim.api.nvim_set_hl(0, 'DiffChange', { bg='#3a3a3a', fg="NONE", bold=true })
+            vim.api.nvim_set_hl(0, 'DiffText', { bg='#000087', fg="NONE", bold=true })
         end
     },
     {

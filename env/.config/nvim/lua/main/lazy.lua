@@ -40,20 +40,14 @@ require('lazy').setup({
     },
 
     {
-        'fenetikm/falcon',
+        'shaunsingh/nord.nvim',
         config = function ()
-            vim.cmd.colorscheme 'falcon'
-            -- Override linenr colors for clarity.
-            vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#aaaaaa', bold=true })
-            vim.api.nvim_set_hl(0, 'CursorLineNr', { fg='#dddddd', bold=true })
-            vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#aaaaaa', bold=true })
-            vim.api.nvim_set_hl(0, 'cursorline', { bg='#1c1c1c', fg="NONE", bold=true })
-
+            vim.cmd.colorscheme 'nord'
             -- Override diff colors for clarity.
-            vim.api.nvim_set_hl(0, 'DiffAdd', { bg='#005f00', fg="NONE", bold=true })
-            vim.api.nvim_set_hl(0, 'DiffDelete', { bg='#5f0000', fg="NONE", bold=true })
-            vim.api.nvim_set_hl(0, 'DiffChange', { bg='#3a3a3a', fg="NONE", bold=true })
-            vim.api.nvim_set_hl(0, 'DiffText', { bg='#000087', fg="NONE", bold=true })
+            vim.api.nvim_set_hl(0, 'DiffAdd', { bg='#145014', fg="NONE" })
+            vim.api.nvim_set_hl(0, 'DiffDelete', { bg='#58191b', fg="#58191b" })
+            vim.api.nvim_set_hl(0, 'DiffChange', { bg='#304369', fg="NONE" })
+            vim.api.nvim_set_hl(0, 'DiffText', { bg='#072970', fg="NONE" })
         end
     },
     {

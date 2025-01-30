@@ -50,6 +50,8 @@ function tm() {
         tmux kill-session -t $2
     elif [[ $1 == 's' ]]; then
         tmux switch-client -t $2
+    elif [[ $1 == 'nw' ]]; then
+        tmux new-window
     else
         echo "Unknown argument to function tm(): ${1}"
     fi

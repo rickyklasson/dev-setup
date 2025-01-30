@@ -13,6 +13,9 @@ export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
 
+# Use bat (batcat) to colorize man pages.
+export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | batcat -p -lman'"
+
 export LS_COLORS="di=34"
 export COLORTERM="truecolor"
 

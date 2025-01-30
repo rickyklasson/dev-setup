@@ -23,3 +23,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Ensure vimsplits are opened in correct orientation (e.g for diffs)
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function ()
+        local width = vim.o.columns
+        if width > 200 then
+            -- Landscape mode diff: Use vertical split and focus right pane.
+            vim.cmd("wincmd H")
+            vim.cmd("wincmd l")
+        else
+            -- Portrait mode diff: Use horizontal split and focus bottom pane.
+            vim.cmd("wincmd K")
+            vim.cmd("wincmd j")
+        end
+
+    end
+})

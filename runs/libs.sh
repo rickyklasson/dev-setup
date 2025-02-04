@@ -1,5 +1,5 @@
 sudo apt -y update
-sudo apt -y install git ripgrep fdclone tmux fzf bat pandoc
+sudo apt -y install git ripgrep fdclone tmux fzf pandoc
 
 # Install exa.
 wget -c http://old-releases.ubuntu.com/ubuntu/pool/universe/r/rust-exa/exa_0.9.0-4_amd64.deb

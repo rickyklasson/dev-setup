@@ -16,7 +16,7 @@ export DEV_ENV_HOME="$HOME/dev-setup"
 export LS_COLORS="di=34"
 export COLORTERM="truecolor"
 
-# -- Alias all ls usage to exa.
+# -- Alias all ls usage to exa for prettier output and better support in WSL.
 # List files and directories with details
 alias ls='exa --long'
 
@@ -32,9 +32,10 @@ alias latree='exa --long --all --tree --ignore-glob ".git"'
 # List files with detailed information and sorted by modification time
 alias lst='exa --long --sort=time'
 
-# -- Neovim aliases.
 alias vi='nvim'
 alias vim='nvim'
+
+alias g='git'
 
 # -- Tmux alias function.
 function tm() {
@@ -72,20 +73,6 @@ function fzf-history-widget() {
 }
 zle -N fzf-history-widget
 bindkey '^F' fzf-history-widget
-
-# Git aliases (through global git config)..
-alias g='git'
-git config --global alias.b branch
-git config --global alias.s status
-git config --global alias.c checkout
-git config --global alias.d diff
-git config --global alias.dt difftool
-git config --global alias.co commit
-git config --global alias.ca "commit --amend"
-git config --global alias.can "commit --amend --no-edit"
-git config --global alias.l "log --oneline --graph --all --decorate --color"
-git config --global diff.tool nvim
-git config --global difftool.nvim.cmd "nvim -d \$LOCAL \$REMOTE"
 
 # Initialize Starship at bottom!
 eval "$(starship init zsh)"

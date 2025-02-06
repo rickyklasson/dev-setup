@@ -40,20 +40,3 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 800
 
 vim.opt.colorcolumn = "120"
-
--- Accociate .tcss files with CSS filetype
-vim.filetype.add({
-    extension = {
-        tcss = "css",
-    },
-})
-
--- Decrease tab width to 2 for C files
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = {"*.h", "*.c"},
-    callback = function (ev)
-        vim.bo.softtabstop = 2
-        vim.bo.tabstop = 2
-        vim.bo.shiftwidth = 2
-    end
-})

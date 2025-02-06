@@ -8,6 +8,7 @@ SAVEHIST=100000
 setopt autocd
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey "^Xa" _expand_alias # Press <C-x> then a to expand alias.
 
 export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -60,6 +61,8 @@ function tm() {
 
 # -- Grep alias for recursive search with file and line nr.
 alias grr='grep -HIrn --exclude-dir=".git"'
+# -- Alias for simple find and replace using sed.
+alias far='find . -type f -name "*.*" -exec sed -i "s/old/new/g"'
 
 # Fuzzy zsh history search.
 function fzf-history-widget() {

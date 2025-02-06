@@ -48,8 +48,15 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
 })
 
--- Define highlight for trailing whitespace
-vim.cmd("highlight ExtraWhitespace ctermbg=red guibg=#ff00ee")
+-- Define highlight for trailing whitespace in NORMAL mode
+vim.api.nvim_create_autocmd({"InsertEnter"}, {
+    pattern = "*",
+    command = "match none"
+})
 
--- Match trailing whitespace and apply highlight
+vim.api.nvim_create_autocmd({"InsertLeave"}, {
+    pattern = "*",
+    command = "match ExtraWhitespace /\\s\\+$/"
+})
+vim.cmd("highlight ExtraWhitespace ctermbg=red guibg=#ff00ee")
 vim.cmd("match ExtraWhitespace /\\s\\+$/")

@@ -3,6 +3,8 @@ dry_run="0"
 
 export DEV_ENV_HOME="${HOME}/dev-setup"
 export XDG_CONFIG_HOME="${HOME}/.config"
+export WIN_USER=$(cmd.exe /c echo "%username%" | tr -d '\r')
+export WIN_BIN="/mnt/c/Users/$WIN_USER/bin"
 
 if [[ $1 == "--dry" ]]; then
     dry_run="1"
@@ -10,49 +12,39 @@ fi
 
 log() {
     if [[ $dry_run == "1" ]]; then
-        echo "[DRY_RUN]: $1"
+        echo "[DRY]: $1"
     else
         echo "$1"
     fi
 }
 
-update_files() {
-    log "copying over files from: $1"
-    pushd $1 &> /dev/null
-    (
-    	configs=$(find . -mindepth 1 -maxdepth 1 -type d)
-        for c in $configs; do
-            directory=${2%/}/${c#./}
-            log "    removing: rm -rf $directory"
+copy_contents() {
+    log "Removing: rm -rf $2"
+    if [[ $dry_run == "0" ]]; then
+        rm -rf $2
+    fi
 
-            if [[ $dry_run == "0" ]]; then
-                rm -rf $directory
-            fi
-
-            log "    copying env: cp $c $2"
-            if [[ $dry_run == "0" ]]; then
-                cp -r ./$c $2
-            fi
-        done
-
-    )
-    popd &> /dev/null
+    log "Copying $1 into $2"
+    if [[ $dry_run == "0" ]]; then
+        cp -r $1 $2
+    fi
 }
 
 copy() {
-    log "removing: $2"
+    log "Removing: $2"
     if [[ $dry_run == "0" ]]; then
         rm $2
     fi
-    log "copying: $1 to $2"
+    log "Copying: $1 to $2"
     if [[ $dry_run == "0" ]]; then
         cp $1 $2
     fi
 }
 
-update_files $DEV_ENV_HOME/env/.config $XDG_CONFIG_HOME
+copy_contents $DEV_ENV_HOME/env/.config/. $XDG_CONFIG_HOME
+copy_contents $DEV_ENV_HOME/env/winbin/. $WIN_BIN
 
 copy $DEV_ENV_HOME/env/.zshrc.local $HOME/.zshrc
-copy $DEV_ENV_HOME/env/.config/starship.toml $HOME/.config/
+copy $DEV_ENV_HOME/env/.config/starship.toml $HOME/.config/starship.toml
 copy $DEV_ENV_HOME/env/.tmux.conf $HOME/.tmux.conf
 

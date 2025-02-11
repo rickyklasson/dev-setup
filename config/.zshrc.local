@@ -17,21 +17,21 @@ export DEV_ENV_HOME="$HOME/dev-setup"
 export LS_COLORS="di=34"
 export COLORTERM="truecolor"
 
-# -- Alias all ls usage to exa for prettier output and better support in WSL.
+# -- Alias all ls usage to eza for prettier output and better support in WSL.
 # List files and directories with details
-alias ls='exa --long'
+alias ls='eza --long'
 
 # List files and directories in a tree-like format
-alias ltree='exa --long --tree'
+alias ltree='eza --long --tree'
 
 # List files and directories with detailed information, including hidden files
-alias la='exa --long --all'
+alias la='eza --long --all'
 
 # List files and directories with detailed information, including hidden files
-alias latree='exa --long --all --tree --ignore-glob ".git"'
+alias latree='eza --long --all --tree --ignore-glob ".git"'
 
 # List files with detailed information and sorted by modification time
-alias lst='exa --long --sort=time'
+alias lst='eza --long --sort=time'
 
 alias vi='nvim'
 alias vim='nvim'

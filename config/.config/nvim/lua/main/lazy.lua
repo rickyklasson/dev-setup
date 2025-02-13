@@ -71,15 +71,37 @@ require('lazy').setup({
                 -- Separator between context and content. Should be a single character string, like '-'.
                 -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
                 separator = nil,
-                zindex = 20, -- The Z-index of the context window
+                zindex = 10, -- The Z-index of the context window
                 on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
             })
+            vim.api.nvim_set_hl(0, 'TreesitterContext', { bg='#21262e' })
         end
     },
 
     {'theprimeagen/harpoon'},
     {'mbbill/undotree'},
     {'tpope/vim-fugitive'},
+    {
+        'echasnovski/mini.map',
+        version = false,
+        config = function ()
+            local mini_map = require('mini.map')
+            mini_map.setup({
+                symbols = {
+                    encode = mini_map.gen_encode_symbols.dot('4x2'),
+                },
+                window = {
+                    zindex = 20, -- Render on top of treesitter-context.
+                },
+            })
+            vim.keymap.set('n', '<Leader>mo', MiniMap.open)
+            vim.keymap.set('n', '<Leader>mc', MiniMap.close)
+            vim.keymap.set('n', '<Leader>mf', MiniMap.toggle_focus)
+            vim.keymap.set('n', '<Leader>mr', MiniMap.refresh)
+            vim.keymap.set('n', '<Leader>ms', MiniMap.toggle_side)
+            vim.keymap.set('n', '<Leader>mt', MiniMap.toggle)
+        end
+    },
 
     -- LSP Plugins
     {

@@ -4,6 +4,8 @@ DEV_ENV_HOME="${HOME}/dev-setup"
 WIN_USER=$(cmd.exe /c echo "%username%" | tr -d '\r')
 WIN_BIN="/mnt/c/Users/$WIN_USER/bin"
 
+source ${HOME}/.cargo/env
+
 if [[ $DRY == "1" ]]; then
     echo "[DRY] Installing yank2win..."
 elif [[ $CLEAN == "1" ]]; then

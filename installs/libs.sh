@@ -14,8 +14,6 @@ else
     sudo apt -y update
     sudo apt -y install ripgrep fdclone tmux fzf pandoc
 
-    cargo install eza
-
     # Install tmux plugin manager.
     sudo rm -rf ~/.tmux/plugins/tpm
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -10,7 +10,7 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey "^Xa" _expand_alias # Press <C-x> then a to expand alias.
 
-export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin"
+export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/.cargo/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
 
@@ -76,6 +76,8 @@ function fzf-history-widget() {
 }
 zle -N fzf-history-widget
 bindkey '^F' fzf-history-widget
+
+source $HOME/.cargo/env
 
 # Initialize Starship at bottom!
 eval "$(starship init zsh)"

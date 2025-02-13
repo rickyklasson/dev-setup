@@ -4,7 +4,7 @@ if [[ $DRY == "1" ]]; then
     echo "[DRY] Installing zsh..."
 elif [[ $CLEAN == "1" ]]; then
     echo "[CLEAN] Cleaning out zsh installation..."
-    sudo chsh -s $(which bash)
+    chsh -s $(which bash)
 
     sudo rm /usr/local/bin/starship
     sudo apt --purge remove zsh

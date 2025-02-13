@@ -17,4 +17,5 @@ else
     git config --global alias.l "log --oneline --graph --all --decorate --color"
     git config --global diff.tool nvim
     git config --global difftool.nvim.cmd "nvim -d \$LOCAL \$REMOTE"
+    git config --global url."git@github.com:".insteadOf "https://github.com/"
 fi

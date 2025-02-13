@@ -17,6 +17,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- Ensure vimsplits are opened in correct orientation (e.g for diffs)
 vim.api.nvim_create_autocmd("VimEnter", {
     callback = function ()
+        if not vim.o.diff then
+            -- Only orient when in diff mode.
+            return
+        end
+
         local width = vim.o.columns
         if width > 200 then
             -- Landscape mode diff: Use vertical split and focus right pane.

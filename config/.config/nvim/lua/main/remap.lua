@@ -6,6 +6,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format document' })
+vim.keymap.set('n', '+', '<C-a>', { desc = 'Increment number' })
+vim.keymap.set('n', '-', '<C-x>', { desc = 'Decrement number' })
 
 -- Custom function using my rust util yank2win to place yanked test in windows clipboard.
 vim.keymap.set('n', '<leader>y', function ()

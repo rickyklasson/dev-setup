@@ -33,6 +33,7 @@ vim.keymap.set('n', '<leader>sy', live_grep_yanked, { desc = 'Live grep for yank
 
 require('telescope').setup({
     defaults = {
+        sorting_strategy = 'ascending',
         layout_strategy = 'vertical',
         file_ignore_patterns = {
             ".ccsproject",

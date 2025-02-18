@@ -33,6 +33,7 @@ alias latree='eza --long --all --tree --ignore-glob ".git"'
 # List files with detailed information and sorted by modification time
 alias lst='eza --long --sort=time'
 
+alias nv='nvim'
 alias vi='nvim'
 alias vim='nvim'
 

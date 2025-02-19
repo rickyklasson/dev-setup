@@ -68,7 +68,7 @@ alias far='find . -type f -name "*.*" -exec sed -i "s/old/new/g"'
 # Fuzzy zsh history search.
 function fzf-history-widget() {
     local selected_command
-    selected_command=$(fc -rl 1 | fzf --height 40% --reverse --tac +m --query="$LBUFFER" \
+    selected_command=$(fc -rl 1 | fzf --height 40% --reverse +m --query="$LBUFFER" --tiebreak=index \
                      --prompt="Search history > " | sed 's/^[[:space:]]*[0-9]\+\**[[:space:]]*//')
     if [[ -n $selected_command ]]; then
         LBUFFER+=$selected_command

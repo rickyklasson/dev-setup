@@ -73,11 +73,6 @@ require('lazy').setup({
             vim.api.nvim_set_hl(0, 'TreesitterContext', { bg='#21262e' })
         end
     },
-    {
-        'ThePrimeagen/harpoon',
-        branch = 'harpoon2',
-        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
-    },
     {'mbbill/undotree'},
     {
         'lewis6991/gitsigns.nvim',

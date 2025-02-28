@@ -27,21 +27,18 @@ require('lazy').setup({
         priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
         config = true,
     },
-
     {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
         requires = { 'nvim-lua/plenary.nvim' }
     },
-
     {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
-
     {
         'shaunsingh/nord.nvim',
-        config = function ()
+        init = function ()
             vim.cmd.colorscheme 'nord'
             -- Override diff colors for clarity.
             vim.api.nvim_set_hl(0, 'DiffAdd', { bg='#145014', fg="NONE" })
@@ -54,7 +51,6 @@ require('lazy').setup({
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
     },
-
     {
         'nvim-treesitter/nvim-treesitter-context',
         requires = 'nvim-treesitter/nvim-treesitter',
@@ -62,7 +58,7 @@ require('lazy').setup({
             require('treesitter-context').setup({
                 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
                 multiwindow = false, -- Enable multiwindow support.
-                max_lines = 10, -- How many lines the window should span. Values <= 0 mean no limit.
+                max_lines = 12, -- How many lines the window should span. Values <= 0 mean no limit.
                 min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
                 line_numbers = true,
                 multiline_threshold = 6, -- Maximum number of lines to show for a single context
@@ -77,8 +73,11 @@ require('lazy').setup({
             vim.api.nvim_set_hl(0, 'TreesitterContext', { bg='#21262e' })
         end
     },
-
-    {'theprimeagen/harpoon'},
+    {
+        'ThePrimeagen/harpoon',
+        branch = 'harpoon2',
+        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+    },
     {'mbbill/undotree'},
     {
         'lewis6991/gitsigns.nvim',
@@ -107,7 +106,6 @@ require('lazy').setup({
             vim.keymap.set('n', '<Leader>mt', MiniMap.toggle)
         end
     },
-
     -- LSP Plugins
     {
         -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins

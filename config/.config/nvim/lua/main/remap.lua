@@ -9,8 +9,8 @@ vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format document' 
 vim.keymap.set('n', '+', '<C-a>', { desc = 'Increment number' })
 vim.keymap.set('n', '-', '<C-x>', { desc = 'Decrement number' })
 
--- Custom function using my rust util yank2win to place yanked test in windows clipboard.
+-- Custom function using clip.exe to place yanked text in windows clipboard.
 vim.keymap.set('n', '<leader>y', function ()
     local yanked_text = vim.fn.getreg('"0')
-    vim.fn.system("yank2win.exe -i " .. vim.fn.shellescape(yanked_text))
+    vim.fn.system("echo " .. vim.fn.shellescape(yanked_text) .. " | clip.exe")
 end, { noremap = true, })

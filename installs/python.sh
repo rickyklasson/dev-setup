@@ -20,5 +20,5 @@ else
     sudo apt install -y python3.11 python${PYTHON_VERSION}-venv python${PYTHON_VERSION}-distutils
 
     # Install venv for the current python installation.
-    sudo apt install -y python3.8-venv
+    sudo apt-get install python3-venv
 fi

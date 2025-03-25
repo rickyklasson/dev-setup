@@ -37,12 +37,4 @@ else
 
     # Clean up temporary files.
     sudo rm nvim-linux64.tar.gz
-
-    # Verify installation.
-    if command -v nvim >/dev/null 2>&1; then
-        echo "Neovim $version installed successfully."
-    else
-        echo "Failed to install Neovim."
-        exit 1
-    fi
 fi

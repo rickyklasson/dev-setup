@@ -10,7 +10,10 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey "^Xa" _expand_alias # Press <C-x> then a to expand alias.
 
-export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/.cargo/bin"
+WIN_USER=$(cmd.exe /c echo "%username%" | tr -d '\r')
+WIN_BIN="/mnt/c/Users/$WIN_USER/bin"
+
+export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/.cargo/bin:$WIN_BIN"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
 

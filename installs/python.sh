@@ -19,6 +19,8 @@ else
     PYTHON_VERSION="3.11"
     sudo apt install -y python3.11 python${PYTHON_VERSION}-venv python${PYTHON_VERSION}-distutils
 
-    # Install venv for the current python installation.
     sudo apt-get install python3-venv
+
+    # Required by e.g. Cython.
+    sudo apt-get install build-essential python3-dev
 fi

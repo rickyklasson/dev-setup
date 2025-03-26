@@ -83,6 +83,11 @@ bindkey '^F' fzf-history-widget
 
 source $HOME/.cargo/env
 
+# Required by 'nvm'.
+export NVM_DIR="$HOME/.config/nvm"
+echo $NVM_DIR
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Initialize Starship at bottom!
 eval "$(starship init zsh)"
 

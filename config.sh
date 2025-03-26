@@ -17,9 +17,6 @@ copy_recursive() {
         echo "[CLEAN] $remove_msg"
         rm -rf $2
     else
-        echo $remove_msg
-        rm -rf $2
-
         echo $copy_msg
         mkdir -p $2
         cp -r $1 $2

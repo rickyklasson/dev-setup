@@ -41,6 +41,7 @@ alias vi='nvim'
 alias vim='nvim'
 
 alias g='git'
+alias python='python3'
 
 # -- Tmux alias function.
 function tm() {

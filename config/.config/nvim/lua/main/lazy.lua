@@ -213,12 +213,12 @@ require('lazy').setup({
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
           -- Start LSP
-          vim.keymap.set("n", "<leader>lS", function()
+          vim.keymap.set("n", "<leader>ls", function()
               vim.cmd("LspStart")
           end, { desc = "Start LSP", noremap = true, silent = true })
 
           -- Stop LSP
-          vim.keymap.set("n", "<leader>ls", function()
+          vim.keymap.set("n", "<leader>lS", function()
               vim.cmd("LspStop")
           end, { desc = "Stop LSP", noremap = true, silent = true })
 

@@ -42,7 +42,6 @@ copy_file() {
 }
 
 copy_recursive $DEV_ENV_HOME/config/.config/. $XDG_CONFIG_HOME
-copy_recursive $DEV_ENV_HOME/config/winbin/. $WIN_BIN
 
 copy_file $DEV_ENV_HOME/config/.zshrc.local $HOME/.zshrc
 copy_file $DEV_ENV_HOME/config/.config/starship.toml $HOME/.config/starship.toml

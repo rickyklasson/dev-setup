@@ -10,10 +10,6 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey "^Xa" _expand_alias # Press <C-x> then a to expand alias.
 
-WIN_USER=$(cmd.exe /c echo "%username%" | tr -d '\r')
-WIN_BIN="/mnt/c/Users/$WIN_USER/bin"
-
-export PATH="$PATH:/opt/nvim-linux64/bin:$HOME/.local/bin:$HOME/.cargo/bin:$WIN_BIN"
 export XDG_CONFIG_HOME="$HOME/.config"
 export DEV_ENV_HOME="$HOME/dev-setup"
 
@@ -35,10 +31,6 @@ alias latree='eza --long --all --tree --ignore-glob ".git"'
 
 # List files with detailed information and sorted by modification time
 alias lst='eza --long --sort=time'
-
-alias nv='nvim'
-alias vi='nvim'
-alias vim='nvim'
 
 alias g='git'
 alias python='python3'

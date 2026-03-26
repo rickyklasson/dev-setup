@@ -2,8 +2,6 @@
 
 export DEV_ENV_HOME="${HOME}/dev-setup"
 export XDG_CONFIG_HOME="${HOME}/.config"
-export WIN_USER=$(cmd.exe /c echo "%username%" | tr -d '\r')
-export WIN_BIN="/mnt/c/Users/$WIN_USER/bin"
 
 echo "******** RUNNING CONFIG SCRIPT ********"
 

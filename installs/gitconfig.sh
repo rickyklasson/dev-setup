@@ -15,7 +15,6 @@ else
     git config --global alias.ca "commit --amend"
     git config --global alias.can "commit --amend --no-edit"
     git config --global alias.l "log --oneline --graph --all --decorate --color"
-    git config --global diff.tool nvim
-    git config --global difftool.nvim.cmd "nvim -d \$LOCAL \$REMOTE"
-    git config --global url."git@github.com:".insteadOf "https://github.com/"
+    git config --global diff.tool vscode
+    git config --global difftool.vscode.cmd "code --wait --diff \$LOCAL \$REMOTE"
 fi

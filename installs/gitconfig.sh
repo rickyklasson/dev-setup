@@ -15,6 +15,7 @@ else
     git config --global alias.ca "commit --amend"
     git config --global alias.can "commit --amend --no-edit"
     git config --global alias.l "log --oneline --graph --all --decorate --color"
+    git config --global core.editor "code --wait"
     git config --global diff.tool vscode
     git config --global difftool.vscode.cmd "code --wait --diff \$LOCAL \$REMOTE"
 fi

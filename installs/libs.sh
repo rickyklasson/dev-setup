@@ -4,7 +4,8 @@ if [[ $DRY == "1" ]]; then
     echo "[DRY] Installing libs..."
 elif [[ $CLEAN == "1" ]]; then
     echo "[CLEAN] Cleaning out libs"
-    sudo apt -y remove ripgrep fdclone tmux fzf pandoc
+    sudo apt -y remove ripgrep fdclone tmux fzf pandoc build-essential
+    sudo apt -y autoremove
 
     cargo uninstall eza
     sudo rm ~/.cargo/bin/eza
@@ -12,7 +13,8 @@ elif [[ $CLEAN == "1" ]]; then
 else
     echo "Installing libs..."
     sudo apt -y update
-    sudo apt -y install ripgrep fdclone tmux fzf pandoc
+    sudo apt -y install ripgrep fdclone tmux fzf pandoc build-essential
+    sudo apt -y upgrade
 
     # Install tmux plugin manager.
     sudo rm -rf ~/.tmux/plugins/tpm

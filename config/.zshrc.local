@@ -75,6 +75,22 @@ function fzf-history-widget() {
 zle -N fzf-history-widget
 bindkey '^F' fzf-history-widget
 
+# Function for comparing two different git diffs (e.g. when comparing branch differences to a common commit).
+function diff-diffs() {
+    if [[ $# -ne 4 ]]; then
+        echo "Four arguments required: ref-commit-1 target-commit-1 ref-commit-2 target-commit-2"
+        return 1
+    fi
+
+    tmp1=$(mktemp)
+    tmp2=$(mktemp)
+
+    git diff $1 $2 > "$tmp1"
+    git diff $3 $4 > "$tmp2"
+
+    code --wait --diff "$tmp1" "$tmp2"
+}
+
 source $HOME/.cargo/env
 
 # Required by 'nvm'.

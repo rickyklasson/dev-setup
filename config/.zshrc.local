@@ -57,6 +57,10 @@ function tm() {
     fi
 }
 
+function precmd() {
+  print -Pn "\e]0;%~\a"
+}
+
 # -- Grep alias for recursive search with file and line nr.
 alias grr='grep -HIrn --exclude-dir=".git"'
 # -- Alias for simple find and replace using sed.
